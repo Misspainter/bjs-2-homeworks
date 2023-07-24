@@ -4,17 +4,14 @@ function compareArrays(arr1, arr2) {
 }
 
 function getUsersNamesInAgeRange(users, gender) {
-	let filtetUser = users.filter(user => user.gender === gender);
-	let userAge = filtetUser.map(user => user.age);
-	let result = userAge.reduce((sumAge, ageValue) => {
-		(sumAge + ageValue) / userAge.length;
-	}, 0);
+	let userAge = users.filter(users => users.gender === gender).map(users => users.age);
+	
 
 	if (!users.length) {
 		return 0;
 	} else if (gender !== "мужской" || gender !== "женский") {
 		return 0;
 	} else {
-		return result;
+		return (userAge.reduce((sumAge, ageValue) => sumAge + ageValue, 0)) / userAge.length;
 	}
 }
