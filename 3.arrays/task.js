@@ -9,7 +9,7 @@ function getUsersNamesInAgeRange(users, gender) {
 
 	if (!users.length) {
 		return 0;
-	} else if (gender !== "мужской" || gender !== "женский") {
+	} else if (gender !== "мужской" && gender !== "женский") {
 		return 0;
 	} else {
 		return (userAge.reduce((sumAge, ageValue) => sumAge + ageValue, 0)) / userAge.length;
